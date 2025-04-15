@@ -164,17 +164,17 @@ COPY tmp_data (
     supplier_city, 
     supplier_country
 )
-FROM '/data/MOCK_DATA1.csv' WITH CSV HEADER DELIMITER ',' NULL '' ESCAPE '"';
+FROM '/raw-data/MOCK_DATA1.csv' WITH CSV HEADER DELIMITER ',' NULL '' ESCAPE '"';
 
-COPY tmp_data FROM '/data/MOCK_DATA2.csv' WITH CSV HEADER;
-COPY tmp_data FROM '/data/MOCK_DATA3.csv' WITH CSV HEADER;
-COPY tmp_data FROM '/data/MOCK_DATA4.csv' WITH CSV HEADER;
-COPY tmp_data FROM '/data/MOCK_DATA5.csv' WITH CSV HEADER;
-COPY tmp_data FROM '/data/MOCK_DATA6.csv' WITH CSV HEADER;
-COPY tmp_data FROM '/data/MOCK_DATA7.csv' WITH CSV HEADER;
-COPY tmp_data FROM '/data/MOCK_DATA8.csv' WITH CSV HEADER;
-COPY tmp_data FROM '/data/MOCK_DATA9.csv' WITH CSV HEADER;
-COPY tmp_data FROM '/data/MOCK_DATA.csv' WITH CSV HEADER;
+COPY tmp_data FROM '/raw-data/MOCK_DATA2.csv' WITH CSV HEADER;
+COPY tmp_data FROM '/raw-data/MOCK_DATA3.csv' WITH CSV HEADER;
+COPY tmp_data FROM '/raw-data/MOCK_DATA4.csv' WITH CSV HEADER;
+COPY tmp_data FROM '/raw-data/MOCK_DATA5.csv' WITH CSV HEADER;
+COPY tmp_data FROM '/raw-data/MOCK_DATA6.csv' WITH CSV HEADER;
+COPY tmp_data FROM '/raw-data/MOCK_DATA7.csv' WITH CSV HEADER;
+COPY tmp_data FROM '/raw-data/MOCK_DATA8.csv' WITH CSV HEADER;
+COPY tmp_data FROM '/raw-data/MOCK_DATA9.csv' WITH CSV HEADER;
+COPY tmp_data FROM '/raw-data/MOCK_DATA.csv' WITH CSV HEADER;
 
 -- Переносим данные из временной таблицы в основную
 
