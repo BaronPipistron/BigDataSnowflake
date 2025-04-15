@@ -164,7 +164,14 @@ COPY tmp_data (
     supplier_city, 
     supplier_country
 )
-FROM '/raw-data/MOCK_DATA1.csv' WITH CSV HEADER DELIMITER ',' NULL '' ESCAPE '"';
+FROM '/raw-data/MOCK_DATA1.csv' WITH (
+    FORMAT csv, 
+    HEADER true, 
+    DELIMITER ',', 
+    NULL '', 
+    QUOTE '"', 
+    ESCAPE '\'
+    );
 
 COPY tmp_data FROM '/raw-data/MOCK_DATA2.csv' WITH CSV HEADER;
 COPY tmp_data FROM '/raw-data/MOCK_DATA3.csv' WITH CSV HEADER;
@@ -277,12 +284,12 @@ SELECT
     supplier_address, 
     supplier_city, 
     supplier_country
-FROM tmp_data;
+FROM tmp_data
+ON CONFLICT (sale_customer_id) DO NOTHING;
 
 -- Сносим временную таблицу, чтобы не занимать лишнее место
 
 DROP TABLE IF EXISTS tmp_data;
-VACUUM FULL; -- Если удалили очень много данных и надо сжать БД (оптимизация дискового пространства)
 
 -- Запускаем скрипт для прeвращения нашей неструктурированной таблицы в Snowflake
 
