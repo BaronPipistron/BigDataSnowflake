@@ -293,5 +293,5 @@ DROP TABLE IF EXISTS tmp_data;
 
 -- Запускаем скрипт для прeвращения нашей неструктурированной таблицы в Snowflake
 
-\i /snowflake-transform/snowflake-transform.sql
-\i /snowflake-transform/fill-snowflake-tables.sql
+\i /snowflake-transform/1-snowflake-transform.sql
+\i /snowflake-transform/2-fill-snowflake-tables.sql
